@@ -1,8 +1,7 @@
 # Aarush Lenka
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-username)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aarush-lenka-11235813fb/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](lenkaaarush@gmail.com)
 
 ## Electronics and Communication Engineering Student | Tech Enthusiast
 
@@ -12,9 +11,9 @@
 
 ### About Me
 
-- 🎓 Currently pursuing my B.Tech in ECE (2nd year)
-- 🛠️ Building innovative projects in IoT, microcontrollers, and automation
-- 🎨 Motion Graphics Head @ ISTE VIT
+-  Currently pursuing my B.Tech in ECE (2nd year)
+-  Building innovative projects in Electronics and IoT
+-  Motion Graphics Head @ ISTE VIT
 
 ---
 
