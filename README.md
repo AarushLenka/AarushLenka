@@ -51,13 +51,13 @@
 <details>
 <summary><b>Smart Home Automation System</b></summary>
 <br>
-IoT-based home automation system using ESP32 and Firebase for remote control and monitoring.
+IoT-based home automation system using ESP32 and Blynk Iot for remote control and monitoring.
 <br><br>
-<b>Technologies:</b> ESP32, Firebase, IoT
+<b>Technologies:</b> ESP32, Sensors, IoT
 </details>
 
 <details>
-<summary><b>Weather Monitoring Station</b></summary>
+<summary><b>Health Monitoring System</b></summary>
 <br>
 Arduino-based weather station that collects and visualizes environmental data.
 <br><br>
@@ -82,14 +82,6 @@ Creative designs and animations showcasing technical concepts through visual sto
 ![IoT](https://img.shields.io/badge/IoT-010101?style=for-the-badge&logo=iot&logoColor=white)
 ![Embedded Systems](https://img.shields.io/badge/Embedded-7F52FF?style=for-the-badge&logo=embeddedc&logoColor=white)
 ![Motion Graphics](https://img.shields.io/badge/Motion_Graphics-9999FF?style=for-the-badge&logo=adobe&logoColor=white)
-
----
-
-### GitHub Stats
-
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=tokyonight)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=your-username&layout=compact&theme=tokyonight)
 
 ---
 
