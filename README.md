@@ -46,34 +46,6 @@
 
 ---
 
-### Featured Projects
-
-<details>
-<summary><b>Smart Home Automation System</b></summary>
-<br>
-IoT-based home automation system using ESP32 and Blynk Iot for remote control and monitoring.
-<br><br>
-<b>Technologies:</b> ESP32, Sensors, IoT
-</details>
-
-<details>
-<summary><b>Health Monitoring System</b></summary>
-<br>
-Arduino-based weather station that collects and visualizes environmental data.
-<br><br>
-<b>Technologies:</b> Arduino, Sensors, Data Visualization
-</details>
-
-<details>
-<summary><b>Motion Graphics Portfolio</b></summary>
-<br>
-Creative designs and animations showcasing technical concepts through visual storytelling.
-<br><br>
-<b>Technologies:</b> After Effects, Motion Design, Visual Communication
-</details>
-
----
-
 ### Skills
 
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
@@ -81,7 +53,6 @@ Creative designs and animations showcasing technical concepts through visual sto
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![IoT](https://img.shields.io/badge/IoT-010101?style=for-the-badge&logo=iot&logoColor=white)
 ![Embedded Systems](https://img.shields.io/badge/Embedded-7F52FF?style=for-the-badge&logo=embeddedc&logoColor=white)
-![Motion Graphics](https://img.shields.io/badge/Motion_Graphics-9999FF?style=for-the-badge&logo=adobe&logoColor=white)
 
 ---
 
