@@ -2,7 +2,7 @@
 
 # Aarush Lenka
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=400&size=18&duration=3000&pause=1000&color=6C7B7F&center=true&vCenter=true&width=500&lines=Electronics+%26+Communication+Engineering;Motion+Graphics+Designer;IoT+%26+Embedded+Systems" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=400&size=18&duration=3000&pause=1000&color=6C7B7F&center=true&vCenter=true&width=500&lines=Embedded+Systems;IoT;VLSI;AI Automation;Motion+Graphics;" alt="Typing SVG" />
 
 </div>
 
@@ -10,15 +10,13 @@
 
 ## About
 
-Currently pursuing **B.Tech in ECE** (2nd year) with a focus on IoT and embedded systems. I design motion graphics and build innovative hardware solutions.
+Currently pursuing **B.Tech in ECE** (3rd year) with a focus on IoT and embedded systems. I design motion graphics and build innovative hardware solutions and AI automations.
 
 **Motion Graphics Head** @ ISTE VIT
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="600">
 </div>
-
----
 
 ## Skills
 
@@ -33,7 +31,7 @@ Currently pursuing **B.Tech in ECE** (2nd year) with a focus on IoT and embedded
 <img src="https://img.shields.io/badge/Blynk-23C48E?style=flat-square&logo=blynk&logoColor=white" />
 <img src="https://img.shields.io/badge/Supabase-23e48E?style=flat-square&logo=blynk&logoColor=white" />
 
-**Programming**
+**Languages**
 
 <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" />
 <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
