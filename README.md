@@ -22,14 +22,7 @@ Currently pursuing **B.Tech in ECE** (3rd year) with a focus on IoT and embedded
 
 <div align="center">
 
-**Hardware & IoT**
 
-<img src="https://img.shields.io/badge/ESP32-000000?style=flat-square&logo=espressif&logoColor=white" />
-<img src="https://img.shields.io/badge/ESP8266-000000?style=flat-square&logo=espressif&logoColor=white" />
-<img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=Arduino&logoColor=white" />
-<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
-<img src="https://img.shields.io/badge/Blynk-23C48E?style=flat-square&logo=blynk&logoColor=white" />
-<img src="https://img.shields.io/badge/Supabase-23e48E?style=flat-square&logo=blynk&logoColor=white" />
 
 **Languages**
 
@@ -40,6 +33,22 @@ Currently pursuing **B.Tech in ECE** (3rd year) with a focus on IoT and embedded
 <img src="https://img.shields.io/badge/Verilog-ffffff?style=flat-square&logo=verilog5&logoColor=white" />
 <img src="https://img.shields.io/badge/Assembly-f33345?style=flat-square&logo=css3&logoColor=white" />
 
+
+**Microcontrollers**
+
+<img src="https://img.shields.io/badge/ESP32-000000?style=flat-square&logo=espressif&logoColor=white" />
+<img src="https://img.shields.io/badge/ESP8266-000000?style=flat-square&logo=espressif&logoColor=white" />
+<img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=Arduino&logoColor=white" />
+
+**Tools**
+
+**Cloud**
+
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
+<img src="https://img.shields.io/badge/Blynk-23C48E?style=flat-square&logo=blynk&logoColor=white" />
+<img src="https://img.shields.io/badge/Supabase-23e48E?style=flat-square&logo=blynk&logoColor=white" />
+
+
 **Design**
 
 <img src="https://img.shields.io/badge/After%20Effects-9999FF?style=flat-square&logo=Adobe%20After%20Effects&logoColor=white" />
@@ -47,10 +56,6 @@ Currently pursuing **B.Tech in ECE** (3rd year) with a focus on IoT and embedded
 <img src="https://img.shields.io/badge/Figma-a3d458?style=flat-square&logo=figma&logoColor=white" />
 
 
-</div>
-
-<div align="center">
-<img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
 </div>
 
 ---
