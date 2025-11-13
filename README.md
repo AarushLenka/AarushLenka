@@ -19,7 +19,7 @@
 
 ```ascii
 ╔══════════════════════════════════════════════════════════════╗
-║  👨‍💻 B.Tech ECE (3rd Year) | IoT & Embedded Systems Focus    ║
+║  👨‍💻 B.Tech ECE (3rd Year) | IoT & Embedded Systems Focus     ║
 ║  🎨 Motion Graphics Head @ ISTE VIT                          ║
 ║  ⚡ Hardware Solutions + AI Automations                       ║
 ╚══════════════════════════════════════════════════════════════╝
