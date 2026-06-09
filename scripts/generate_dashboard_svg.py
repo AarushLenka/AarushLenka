@@ -435,9 +435,7 @@ def github_stats(y: float, stats: dict[str, int]) -> list[str]:
         stat_line(
             "Lines of Code on GitHub:",
             value_parts=[
-                (TEXT, f"{fmt(code_size)} ", 700),
-                ("#c13d43", f"( {fmt(code_added)}++", 700),
-                (TEXT, f", {fmt(code_removed)}-- )", 700),
+                (TEXT, fmt(code_size), 700),
             ],
             y=y + 52,
         ),
