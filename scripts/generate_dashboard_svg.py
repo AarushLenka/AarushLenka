@@ -231,8 +231,24 @@ def is_probably_text(data: bytes) -> bool:
 
 
 def count_repo_lines(repo: dict, token: str | None) -> int:
+    name = repo.get("full_name", "?")
     zipball_url = repo.get("zipball_url")
     if not zipball_url:
+        print(f"  debug {name}: no zipball_url, skipping")
+        return 0
+
+    print(f"  debug {name}: fetching zipball {zipball_url}")
+    try:
+        archive = request_bytes(str(zipball_url), token=token, retries=1)
+    except Exception as exc:
+        print(f"  debug {name}: fetch failed: {exc}")
+        return 0
+
+    print(f"  debug {name}: got {len(archive)} bytes")
+    try:
+        zf = zipfile.ZipFile(io.BytesIO(archive))
+    except zipfile.BadZipFile as exc:
+        print(f"  debug {name}: bad zip: {exc}, first 20 bytes: {archive[:20]!r}")
         return 0
 
     total = 0
@@ -241,10 +257,8 @@ def count_repo_lines(repo: dict, token: str | None) -> int:
     skipped_binary = 0
     counted = 0
 
-    archive = request_bytes(str(zipball_url), token=token, retries=1)
-    with zipfile.ZipFile(io.BytesIO(archive)) as zip_file:
-        all_items = zip_file.infolist()
-        files = [i for i in all_items if not i.is_dir() and i.file_size > 0]
+    with zf:
+        files = [i for i in zf.infolist() if not i.is_dir() and i.file_size > 0]
         for item in files:
             suffix = Path(item.filename).suffix.lower()
             if suffix in SKIP_EXTENSIONS:
@@ -253,7 +267,7 @@ def count_repo_lines(repo: dict, token: str | None) -> int:
             if item.file_size > 5_000_000:
                 skipped_size += 1
                 continue
-            data = zip_file.read(item)
+            data = zf.read(item)
             if not is_probably_text(data):
                 skipped_binary += 1
                 continue
@@ -263,7 +277,6 @@ def count_repo_lines(repo: dict, token: str | None) -> int:
             total += lines
             counted += 1
 
-    name = repo.get("full_name", "?")
     print(f"  debug {name}: {len(files)} files, counted={counted}, "
           f"skip_ext={skipped_ext}, skip_size={skipped_size}, skip_binary={skipped_binary}, lines={total}")
     return total
