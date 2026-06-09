@@ -231,70 +231,42 @@ def is_probably_text(data: bytes) -> bool:
 
 
 def count_repo_lines(repo: dict, token: str | None) -> int:
-    name = repo.get("full_name", "?")
-    zipball_url = repo.get("zipball_url")
-    if not zipball_url:
-        print(f"  debug {name}: no zipball_url, skipping")
+    full_name = repo.get("full_name")
+    if not full_name:
         return 0
-
-    print(f"  debug {name}: fetching zipball {zipball_url}")
-    try:
-        archive = request_bytes(str(zipball_url), token=token, retries=1)
-    except Exception as exc:
-        print(f"  debug {name}: fetch failed: {exc}")
-        return 0
-
-    print(f"  debug {name}: got {len(archive)} bytes")
-    try:
-        zf = zipfile.ZipFile(io.BytesIO(archive))
-    except zipfile.BadZipFile as exc:
-        print(f"  debug {name}: bad zip: {exc}, first 20 bytes: {archive[:20]!r}")
-        return 0
+    default_branch = repo.get("default_branch") or "main"
+    zipball_url = f"https://api.github.com/repos/{full_name}/zipball/{default_branch}"
 
     total = 0
-    skipped_ext = 0
-    skipped_size = 0
-    skipped_binary = 0
-    counted = 0
-
-    with zf:
-        files = [i for i in zf.infolist() if not i.is_dir() and i.file_size > 0]
-        for item in files:
+    archive = request_bytes(zipball_url, token=token, retries=1)
+    with zipfile.ZipFile(io.BytesIO(archive)) as zip_file:
+        for item in zip_file.infolist():
+            if item.is_dir() or item.file_size == 0:
+                continue
             suffix = Path(item.filename).suffix.lower()
             if suffix in SKIP_EXTENSIONS:
-                skipped_ext += 1
                 continue
             if item.file_size > 5_000_000:
-                skipped_size += 1
                 continue
-            data = zf.read(item)
+            data = zip_file.read(item)
             if not is_probably_text(data):
-                skipped_binary += 1
                 continue
-            lines = data.count(b"\n")
+            total += data.count(b"\n")
             if data and not data.endswith(b"\n"):
-                lines += 1
-            total += lines
-            counted += 1
-
-    print(f"  debug {name}: {len(files)} files, counted={counted}, "
-          f"skip_ext={skipped_ext}, skip_size={skipped_size}, skip_binary={skipped_binary}, lines={total}")
+                total += 1
     return total
 
 
 def count_all_repo_lines(repos: list[dict], token: str | None) -> int:
     total = 0
-    non_fork = [r for r in repos if not r.get("fork")]
-    print(f"debug: counting lines for {len(non_fork)} non-fork repos (total repos: {len(repos)})")
-    for repo in non_fork:
-        name = repo.get("full_name") or repo.get("name") or "unknown repo"
+    for repo in repos:
+        if repo.get("fork"):
+            continue
         try:
-            lines = count_repo_lines(repo, token)
-            print(f"debug: {name} => {lines} lines")
-            total += lines
+            total += count_repo_lines(repo, token)
         except Exception as exc:
+            name = repo.get("full_name") or repo.get("name") or "unknown repo"
             print(f"warning: skipped line count for {name}: {exc}")
-    print(f"debug: total lines across all repos: {total}")
     return total
 
 
