@@ -257,14 +257,17 @@ def count_repo_lines(repo: dict, token: str | None) -> int:
 
 def count_all_repo_lines(repos: list[dict], token: str | None) -> int:
     total = 0
-    for repo in repos:
-        if repo.get("fork"):
-            continue
+    non_fork = [r for r in repos if not r.get("fork")]
+    print(f"debug: counting lines for {len(non_fork)} non-fork repos (total repos: {len(repos)})")
+    for repo in non_fork:
+        name = repo.get("full_name") or repo.get("name") or "unknown repo"
         try:
-            total += count_repo_lines(repo, token)
+            lines = count_repo_lines(repo, token)
+            print(f"debug: {name} => {lines} lines")
+            total += lines
         except Exception as exc:
-            name = repo.get("full_name") or repo.get("name") or "unknown repo"
             print(f"warning: skipped line count for {name}: {exc}")
+    print(f"debug: total lines across all repos: {total}")
     return total
 
 
