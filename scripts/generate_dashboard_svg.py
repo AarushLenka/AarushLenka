@@ -236,22 +236,36 @@ def count_repo_lines(repo: dict, token: str | None) -> int:
         return 0
 
     total = 0
+    skipped_ext = 0
+    skipped_size = 0
+    skipped_binary = 0
+    counted = 0
+
     archive = request_bytes(str(zipball_url), token=token, retries=1)
     with zipfile.ZipFile(io.BytesIO(archive)) as zip_file:
-        for item in zip_file.infolist():
-            if item.is_dir() or item.file_size == 0:
-                continue
+        all_items = zip_file.infolist()
+        files = [i for i in all_items if not i.is_dir() and i.file_size > 0]
+        for item in files:
             suffix = Path(item.filename).suffix.lower()
             if suffix in SKIP_EXTENSIONS:
+                skipped_ext += 1
                 continue
             if item.file_size > 5_000_000:
+                skipped_size += 1
                 continue
             data = zip_file.read(item)
             if not is_probably_text(data):
+                skipped_binary += 1
                 continue
-            total += data.count(b"\n")
+            lines = data.count(b"\n")
             if data and not data.endswith(b"\n"):
-                total += 1
+                lines += 1
+            total += lines
+            counted += 1
+
+    name = repo.get("full_name", "?")
+    print(f"  debug {name}: {len(files)} files, counted={counted}, "
+          f"skip_ext={skipped_ext}, skip_size={skipped_size}, skip_binary={skipped_binary}, lines={total}")
     return total
 
 
